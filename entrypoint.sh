@@ -10,4 +10,4 @@ echo "Starting server Zomboid..."
 
 
 cd /home/steam/ZomboidDedicatedServer
-exec ./start-server.sh -servername "GMAN"
+exec ./start-server.sh -servername "GMAN" -adminusername "${ADMIN_USERNAME}" -adminpassword "${ADMIN_PASSWORD}"

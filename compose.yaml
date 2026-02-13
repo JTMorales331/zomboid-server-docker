@@ -8,3 +8,6 @@ services:
       - "16262:16262/udp"
     volumes:
       - ./server-data:/home/steam/zomboid
+    environment:
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=adminpassword123
