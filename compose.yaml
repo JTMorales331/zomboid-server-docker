@@ -1,5 +1,7 @@
 services:
   pz-server:
+    env_file:
+      - .env
     build: .
     container_name: zomboid-test
     restart: unless-stopped
@@ -9,5 +11,7 @@ services:
     volumes:
       - ./server-data:/home/steam/Zomboid
     environment:
-      - ADMIN_USERNAME=admin
-      - ADMIN_PASSWORD=adminpassword123
+      - SERVER_NAME=${SERVER_NAME}
+      - ADMIN_USERNAME=${ADMIN_USERNAME}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - INSTALL_DIR=${INSTALL_DIR}

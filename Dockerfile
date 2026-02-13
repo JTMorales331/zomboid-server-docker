@@ -2,7 +2,7 @@
 FROM ubuntu:22.04
 
 # avoid interactive prompts
-ENV DEBIAN_FRONTEND=noneinteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Dependencies for Zomboid server Ubuntu and Steam CMD
 # https://help.clouding.io/hc/en-us/articles/10469039218716-How-to-Create-a-Project-Zomboid-Server-on-Linux
@@ -25,7 +25,7 @@ RUN mkdir Steam && cd Steam && \
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
 
 # create the directory for the dedicated server and other save shit in steam/zomboid
-RUN mkdir -p /home/steam/ZomboidDedicatedServer /home/steam/zomboid
+RUN mkdir -p ${INSTALL_DIR} /home/steam/zomboid
 
 # Copy the entrypoint.sh to the working directory /home/steasm
 COPY entrypoint.sh /home/steam/entrypoint.sh
